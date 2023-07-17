@@ -1,0 +1,9 @@
+<button [ngClass]="buttonClass">
+    <app-link-icon *ngIf="page=='main'" class="svg not__hovered" [fill]="'#737373'"></app-link-icon>
+    <app-link-icon *ngIf="page=='main'" class="svg active" [fill]="'#633CFF'"></app-link-icon>
+    <app-detail-icon *ngIf="page=='detail'" class="svg not__hovered" [fill]="'#737373'"></app-detail-icon>
+    <app-detail-icon *ngIf="page=='detail'" class="svg active" [fill]="'#633CFF'"></app-detail-icon>
+    <p >
+        <ng-content></ng-content>
+    </p>
+</button>

@@ -1,0 +1,38 @@
+<div class="purple__background">
+
+</div>
+<div class="container">
+    <div class="wrapper">
+        <div class="header">
+            <app-button [buttonClass]="'secondary'" routerLink="/" >Back to Editor</app-button>
+            <app-button [buttonClass]="'primary'" (click)="createData()" >Copy Link to Clipboard </app-button>
+        </div>
+        <div class="header mobile">
+            <app-button [buttonClass]="'secondary'" [width]="true" routerLink="/" >Back to Editor</app-button>
+            <app-button [buttonClass]="'primary'" [width]="true" (click)="createData()" >Copy Link to Clipboard </app-button>
+        </div>
+    </div>    
+    
+    <div class="link">
+        <div class="link__wrapper">
+            <div class="img">
+                <img [src]="imagePreview? imagePreview: '/assets/avatar.png'"  alt="avatar">
+            </div>
+            <h1>{{profile.firstName}}</h1>
+            <h1>{{profile.lastName}}</h1>
+
+            <h2>{{profile.email}}</h2>
+
+            <app-link-item  *ngFor="let platform of platforms"  [platform]="platform.platform " [link]="platform.link" ></app-link-item>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

@@ -1,0 +1,11 @@
+<header>
+    <div class="container">
+        <div class="wrapper">
+            <img class="logo" src="/assets/logo.svg" alt="logo">
+            <div class="btns__wrapper">
+                <app-link-button  [buttonClass]="tab=='links'? 'link__button__active':'link__button'" [page]="'main'" >Links</app-link-button>
+                <app-link-button [buttonClass]="tab=='profile'? 'link__button__active':'link__button'"[page]="'detail'" >Profile Details</app-link-button>
+            </div>
+        </div>
+    </div>
+</header>

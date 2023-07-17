@@ -1,0 +1,65 @@
+<div  class="form__wrapper">
+    <div class="text__wrapper">
+        <h1>Profile Details</h1>
+        <h2>Add your details to create a personal touch to your profile.</h2>
+    </div>
+    <div class="picture__wrapper">
+        <p class="title">
+            Profile picture
+        </p>
+        <div class="pictures">
+            <label *ngIf="!imagePreview && !loading" class="picture__container">
+                <input type="file"  (change)="onFileSelected($event)" accept=".png,.jpg" class="hidden" id="profile_picture">
+                <app-upload-icon class="icon"  [fill]="'#633CFF'" ></app-upload-icon>
+                <p class="title">
+                    + Upload Image
+                </p>
+            </label>
+            <img *ngIf="imagePreview  && !loading"  [src]="imagePreview" alt="Preview" class="image-preview">
+            <label *ngIf="imagePreview  && !loading" class="picture__container image">
+                <input type="file"  (change)="onFileSelected($event)" accept=".png,.jpg" class="hidden" id="profile_picture">
+                <app-upload-icon class="icon"  [fill]="'#FFF'" ></app-upload-icon>
+                <p class="title">
+                    + Change Image
+                </p>
+            </label>
+            <label *ngIf="loading" class="picture__container loader">
+               Loading....
+            </label>
+            <p class="info">
+                Image must be below 1024x1024px. Use PNG or JPG format.
+            </p>
+        </div>
+    </div>
+    <form [formGroup] = "formGroup" (ngSubmit)="submitForm()" >
+        <div class="item__list">
+            <div class="input__wrapper">
+                <label>First name</label>   
+                <input [ngClass]="submitted &&  this.formGroup.get('firstName')?.invalid? 'input__error' : 'input'" type="text"  formControlName="firstName"  placeholder="e.g. John">
+                <div class="error__wrapper" *ngIf="submitted &&  this.formGroup.get('firstName')?.invalid">
+                    <div class="error" *ngIf="this.formGroup.get('firstName')?.errors?.['required']"> <small>Cant be empty</small>  </div>
+                </div>
+            </div>
+            <div class="input__wrapper">
+                <label>Last name</label>   
+                <input [ngClass]="submitted &&  this.formGroup.get('lastName')?.invalid? 'input__error' : 'input'" type="text"  formControlName="lastName"  placeholder="e.g. Doe">
+                <div class="error__wrapper" *ngIf="submitted &&  this.formGroup.get('lastName')?.invalid">
+                    <div class="error" *ngIf="this.formGroup.get('lastName')?.errors?.['required']"> <small>Cant be empty</small>  </div>
+                </div>
+            </div>
+            <div class="input__wrapper">
+                <label>Email</label>   
+                <input [ngClass]="submitted &&  this.formGroup.get('email')?.invalid? 'input__error' : 'input'" type="text"  formControlName="email"  placeholder="e.g. doe@mail.com">
+                <div class="error__wrapper" *ngIf="submitted &&  this.formGroup.get('email')?.invalid">
+                    <div class="error" *ngIf="this.formGroup.get('email')?.errors?.['required']"> <small>Cant be empty</small>  </div>
+                    <div class="error" *ngIf="this.formGroup.get('email')?.errors?.['email']"> <small>Email is invalid</small>  </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn__wrapper">
+            <app-button class="btn" [buttonClass]="'secondary'" (click)="backToLinks()">Back</app-button>
+            <app-button class="btn" [buttonClass]="'primary'"  [type]="'submit'">Save and go to preview</app-button>
+           
+        </div>
+    </form>
+</div>

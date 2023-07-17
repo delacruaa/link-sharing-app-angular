@@ -1,0 +1,51 @@
+.wrapper   {
+    margin-top: 50px;
+    position: relative;
+    width: 350px;
+    height: 819px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .content {
+        position: absolute;
+        padding-top: 50px;
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .circle {
+                width: 96px;
+                height: 96px;
+                background-color: #EEE;
+                border-radius: 50%;
+            }
+            .name {
+                width: 160px;
+                height: 16px;
+                background-color: #EEE;
+                border-radius: 20px;
+            }
+            .email {
+                width: 180px;
+                height: 16px;
+                background-color: #EEE;
+                border-radius: 20px;
+            }
+            .text {
+                color: var(--normal-gray);
+                font-size: 14px;
+            }
+        }
+        .platform__list {
+            margin-top: 30px;
+            height:340px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            padding-right: 5px;
+        }
+    }
+}

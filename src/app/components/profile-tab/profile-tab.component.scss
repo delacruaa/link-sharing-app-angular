@@ -1,0 +1,168 @@
+.form__wrapper {
+    width: 100%;
+    padding-top: 50px;
+    
+    h2 {
+        margin: 15px 0;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--normal-gray);
+    }
+    .picture__wrapper {
+      
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .title {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--normal-gray);
+        }
+        .pictures {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .picture__container {
+            cursor: pointer;
+            width: 192px;
+            height: 192px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-purple);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .title {
+                color: var(--purple);
+                font-weight: 700;
+            }
+            .hidden {
+                display: none;
+            }
+        }
+        .image {
+            position: absolute;
+            background-color: transparent;
+            .title {
+               display: none;
+            }
+            &:hover {
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                .title {
+                    display: block;
+                    color: white;
+                    font-weight: 700;
+                }
+            }
+        }
+        .image-preview {
+            width: 192px;
+            height: 192px;
+            cursor: pointer;
+        }
+        .loader {
+            color: var(--purple);
+            font-size: 18px;
+        }
+        .info {
+            width: 150px;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--normal-gray);
+        }
+    }
+    form {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+       
+        .item__list {
+            width: 100%;
+            border-bottom: 1px solid var(--borders);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .input__wrapper {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            label {
+                font-size: 12px;
+                color: var(--normal-gray);
+                display: block;
+                margin-bottom: 10px;
+            }
+            .input {
+                padding: 16px;
+                outline: none;
+                border: 1px solid var(--borders);
+                margin-bottom:20px ;
+                border-radius: 10px;
+                color: var(--normal-gray);
+                &:focus {
+                    border-color: var(--purple);
+                }
+            }
+            
+            .input__error {
+                @extend .input;
+                border-color: var(--red);
+            }
+            .error__wrapper {
+                position: absolute;
+                font-size: 12px;
+                top: 0;
+                right: 20px;
+                color: var(--red);
+            }
+           
+        }
+        .btn__wrapper {
+            display: flex;
+            gap: 20px;
+            align-self: flex-end;
+        }
+
+    }
+}
+@media(max-width:800px) {
+    .form__wrapper {
+        h1 {
+            font-size: 16px;
+        }
+        h2 {
+           
+            font-size: 14px;
+            
+        }
+        form {
+            .input__wrapper {
+                padding: 0;
+               
+            }
+            .btn__wrapper {
+               margin-bottom: 50px;
+            }
+        }
+    }
+}
+@media(max-width:514px) {
+    .form__wrapper {
+        .picture__wrapper {
+            flex-direction: column;
+            .title {
+                margin-bottom: 20px;
+            }
+            .pictures {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.form__wrapper {
+    width: 100%;
+    padding-top: 50px;
+    h2 {
+        margin: 15px 0;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--normal-gray);
+    }
+    form {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        .btn {
+            display: flex;
+            align-self: flex-end;
+        }
+        .item__list {
+            height: 500px;
+            overflow-y: scroll;
+            background-color: var(--light-gray);
+            border-bottom: 1px solid var(--borders);
+            margin-bottom: 20px;
+            .row__wrapper {
+                padding: 20px;
+                .header {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    .link {
+                        font-size: 16px;
+                        color: var(--normal-gray);
+                        font-weight: 700;
+                    }
+                    .remove {
+                        font-size: 16px;
+                        color: var(--normal-gray);
+                        cursor: pointer;
+                    }
+                }
+                .input__wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    label {
+                        font-size: 12px;
+                        color: var(--normal-gray);
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    .input {
+                        padding: 16px 16px 16px 44px;
+                        outline: none;
+                        border: 1px solid var(--borders);
+                        margin-bottom:20px ;
+                        border-radius: 10px;
+                        color: var(--normal-gray);
+                        &:focus {
+                            border-color: var(--purple);
+                        }
+                    }
+                    .select {
+                        
+                        cursor: pointer;
+                    }
+                    .icon {
+                        width: 14px;
+                        height: 9px;
+                        position: absolute;
+                        top: 45px;
+                        right: 20px;
+                        cursor: pointer;
+                    }
+                    .link {
+                        left: 16px;
+                        top: 40px;
+                    }
+                    .big {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    .input__error {
+                        border-color: var(--red);
+                    }
+                    .error__wrapper {
+                        position: absolute;
+                        font-size: 12px;
+                        top: 0;
+                        right: 0;
+                        color: var(--red);
+                    }
+                    .select__btn {
+                        gap: 10px;
+                        border: none;
+                        cursor: pointer;
+                        width: 100%;
+                        background-color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        height: 48px;
+                        padding: 16px; 
+                        font-size: 16px;
+                        color: var(--normal-gray);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:800px) {
+    .form__wrapper {
+        h1 {
+            font-size: 16px;
+        }
+        h2 {
+           
+            font-size: 14px;
+            
+        }
+        form {
+            .item__list {
+                height: fit-content;
+                overflow-y: auto;
+                padding-bottom: 100px;
+                .row__wrapper {
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}

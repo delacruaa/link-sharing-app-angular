@@ -1,0 +1,51 @@
+<div  class="form__wrapper">
+    <div class="text__wrapper">
+        <h1>Customize your links</h1>
+        <h2>Add/edit/remove links below and then share all your profiles with the world!</h2>
+        <app-button (click)="addItemList()" [buttonClass]="'secondary'" [width]="true" >+ Add new link</app-button>
+    </div>
+    <form [formGroup] = "formGroup" (ngSubmit)="submitForm()" >
+        <div class="item__list" formArrayName="itemList">
+            <div class="row__wrapper" *ngFor="let item of itemListFormGroups.controls; let i =index" formGroupName="{{i}}">
+                <div class="header">
+                    <p class="link">Link#{{i+1}}</p>
+                    <p class="remove" *ngIf="itemListFormGroups.controls.length>1" (click)="removeItemList(i)">Remove</p>
+                </div>
+                <div class="input__wrapper">
+                    <label>Plaform</label>   
+                    <input  readonly   formControlName="platform" [ngClass]="submitted &&  itemListFormGroups.controls[i].get('platform')?.invalid? 'input select input__error' : 'input select'" type="text" placeholder="Select Platform" (click)="menu.toggle()" >
+                    <img class="icon" src="/assets/icon-arrow.svg" alt="arrow">
+                    <ng-container *ngFor="let select of selects">
+                        <img *ngIf="select.title == itemListFormGroups.controls[i].get('platform')?.value" class="icon link big" [src]="select.img" alt=""/>
+                    </ng-container>
+                    
+                    <div class="error__wrapper" *ngIf="submitted && itemListFormGroups.controls[i].get('platform')?.invalid">
+                        <div class="error" *ngIf="itemListFormGroups.controls[i].get('platform')?.errors?.['required']">
+                            <small>Cant be empty</small>
+                        </div>
+                    </div>
+                    <app-select #menu>
+                        <button type="button" class="select__btn" (click)="setPlatformValue(select.title,i);menu.hide();getImgLink(i)"  *ngFor="let select of selects">
+                            <img [src]="select.img" alt="icon">
+                            <p>{{select.title}}</p>
+                        </button>
+                    </app-select>
+                </div>
+                <div class="input__wrapper">
+                    <label>Link</label>   
+                    <input formControlName="link" [ngClass]="submitted &&  itemListFormGroups.controls[i].get('link')?.invalid? 'input input__error' : 'input'" type="text" placeholder="e.g. https://www.github.com/johnappleseed" >
+                    <app-link-icon class="icon link" [fill]="'#737373'" ></app-link-icon>
+                    <div class="error__wrapper " *ngIf="submitted && itemListFormGroups.controls[i].get('link')?.invalid">
+                        <div class="error" *ngIf="itemListFormGroups.controls[i].get('link')?.errors?.['required']">
+                            <small>Cant be empty</small>
+                        </div>
+                        <div class="error" *ngIf="itemListFormGroups.controls[i].get('link')?.errors?.['pattern']">
+                            <small>Invalid link format</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-button class="btn" [buttonClass]="'primary'" [type]="'submit'">Save</app-button>
+    </form>
+</div>

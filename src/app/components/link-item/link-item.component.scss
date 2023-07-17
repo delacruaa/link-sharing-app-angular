@@ -1,0 +1,139 @@
+.none {
+    cursor: pointer;
+    width: 237px;
+    height: 44px;
+    background-color: #EEE;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    border-radius: 10px;
+    padding:  0 20px ;
+    gap: 10px;
+    .icon {
+        margin-top: 5px;
+        margin-left: auto;
+    }
+    img {
+        
+        display: none;
+    }
+}
+
+.github {
+    @extend .none;
+    color: white;
+    background-color: black;
+    img{
+        display: block;
+    }
+}
+.frontendmentor {
+    @extend .none;
+    background-color: white;
+    border: 1px solid var(--borders);
+    img{
+        display: block;
+    }
+}
+.twitter {
+    @extend .none;
+    color: white;
+    background-color: rgb(67, 183, 233);
+    img{
+        display: block;
+    }
+}
+.linkedin {
+    @extend .none;
+    color: white;
+    background-color: rgb(45, 104, 255);;
+    img{
+        display: block;
+    }
+}
+.youtube {
+    @extend .none;
+    color: white;
+    background-color: rgb(238, 57, 57);
+    img{
+        display: block;
+    }
+}
+.facebook {
+    @extend .none;
+    color: white;
+    background-color: rgb(36, 66, 172);
+    img{
+        display: block;
+    }
+}
+.twitch {
+    @extend .none;
+    color: white;
+    background-color: rgb(145, 70, 255);
+    img{
+        display: block;
+    }
+}
+
+.devto {
+    @extend .none;
+    color: white;
+    background-color: rgb(51, 51, 51);
+    img{
+        display: block;
+    }
+}
+.codewars {
+    @extend .none;
+    color: white;
+    background-color: rgb(138, 26, 80);
+    img{
+        display: block;
+    }
+}
+
+
+.codepen {
+    @extend .none;
+    color: white;
+    background-color: black;
+    img{
+        display: block;
+    }
+}
+
+.freecodecamp {
+    @extend .none;
+    color: white;
+    background-color: rgb(48, 34, 103);
+    img{
+        display: block;
+    }
+}
+
+.gitlab {
+    @extend .none;
+    color: white;
+    background-color: rgb(235, 73, 37);
+    img{
+        display: block;
+    }
+}
+
+.hashnode {
+    @extend .none;
+    color: white;
+    background-color: rgb(3, 48, 209);
+    img{
+        display: block;
+    }
+}
+.stackoverflow {
+    @extend .none;
+    color: white;
+    background-color: rgb(236, 113, 0);
+    img{
+        display: block;
+    }
+}

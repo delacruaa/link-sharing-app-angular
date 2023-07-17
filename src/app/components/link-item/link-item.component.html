@@ -1,0 +1,5 @@
+<div [ngClass]="platform | lowercase | removeSpace"  (click)="redirectLink()"> 
+    <img src={{img}} alt="">
+    <p>{{platform=='none'? '': platform}}</p>
+    <app-arrow-icon [fill]="platform=='none' || platform=='Frontend Mentor'  ? '#000000': '#FFF'" class="icon"></app-arrow-icon>
+</div>

@@ -1,0 +1,36 @@
+.secondary {
+    border: none;
+    border: 1px solid var(--purple);
+    width: fit-content;
+    height: 46px;
+    background-color: transparent;
+    color: var(--purple);
+    padding: 0 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    &:hover {
+        background-color:  var(--light-purple)
+    }
+}
+
+.primary {
+    border: none;
+    padding: 0 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: fit-content;
+    height: 46px;
+    background-color:var(--purple);
+    color: #FFFF;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+        background-color:  var(--purple-hover)
+    }
+}
+
+.full {
+    width: 100%;
+}
