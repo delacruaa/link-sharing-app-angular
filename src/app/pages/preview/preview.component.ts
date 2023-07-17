@@ -40,8 +40,8 @@ export class PreviewComponent implements OnInit {
 
     this.linkService.createData(id, data).then(()=> {
       this.spinner.hide();
-      this.clipboard.copy(`https://link-sharing-app-angular.vercel.app/${id}`)
-      this.toast.success('Copied! Paste on your address linkj');
+       this.toast.success('Done! you will be redirected');
+        window.open(`https://link-sharing-app-angular.vercel.app/${id}`, '_blank');
     }).catch(()=> {
       this.spinner.hide();
       this.toast.error('Error, try later');
