@@ -40,7 +40,7 @@ export class PreviewComponent implements OnInit {
 
     this.linkService.createData(id, data).then(()=> {
       this.spinner.hide();
-      this.clipboard.copy(`http://localhost:4200/${id}`)
+      this.clipboard.copy(`https://link-sharing-app-angular.vercel.app/${id}`)
       this.toast.success('Copied! Paste on your address linkj');
     }).catch(()=> {
       this.spinner.hide();
